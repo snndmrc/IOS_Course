@@ -41,9 +41,9 @@ class ViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
             else{
-                //2. Adım
+                //2. Adım DAtayı aldık.
                 do{
-                    let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, Any>
+                    let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, Any> // Mutable container ifadesi bir array veya sözlük döndürür oyüzden bunu kullanıyoruz.
                     
                     //ASYNC
                     
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
             }
             
         }
-        task.resume()
+        task.resume() // Session işleminin gerçekleşmesi için gerekli adım.
     }
     
 }
